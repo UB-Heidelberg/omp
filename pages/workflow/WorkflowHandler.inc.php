@@ -117,7 +117,6 @@ class WorkflowHandler extends PKPWorkflowHandler {
 				}
 
 				$submissionFileDao->insertObject($submissionFile, $currentFilePath);
-				break;
 			}
 		}
 
