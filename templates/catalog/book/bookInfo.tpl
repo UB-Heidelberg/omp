@@ -28,8 +28,7 @@
 	<div id="bookInfoTabs" class="pkp_controllers_tab">
 		<ul>
 			<li><a href="#abstractTab">{translate key="submission.synopsis"}</a></li>
-			{if $chapters|@count != 0}<li><a href="#contentsTab">{translate key="common.contents"}</a></li>{/if}
-			{if $availableFiles|@count != 0}<li><a href="#downloadTab">{translate key="submission.download"}</a></li>{/if}
+			{if $availableFiles|@count != 0}<li><a href="#downloadTab">{translate key="common.contents"} & {translate key="submission.download"}</a></li>{/if}
 			{call_hook|assign:"sharingCode" name="Templates::Catalog::Book::BookInfo::Sharing"}
 			{if !is_null($sharingCode) || !empty($blocks)}
 				<li><a href="#sharingTab">{translate key="submission.sharing"}</a></li>
@@ -64,46 +63,14 @@
 				{/if}
 			</div>
 		</div>
-		{if $chapters|@count != 0}
-			<div id="contentsTab">
-				{foreach from=$chapters item=chapter}
-					<p>
-						<strong>{$chapter->getLocalizedTitle()}</strong>
-						{if $chapter->getLocalizedSubtitle() != '' }<br />{$chapter->getLocalizedSubtitle()}{/if}
-						{assign var=chapterAuthors value=$chapter->getAuthorNamesAsString()}
-						{if $publishedMonograph->getAuthorString() != $chapterAuthors}
-							<div class="authorName">{$chapterAuthors}</div>
-						{/if}
-					</p>
-				{/foreach}
-			</div>
-		{/if}
 		{if $availableFiles|@count != 0}
 		<div id="downloadTab">
 			{assign var=publicationFormats value=$publishedMonograph->getPublicationFormats()}
 			{assign var=currency value=$currentPress->getSetting('currency')}
 			{if !$loggedInUsername}<p>{translate key="catalog.loginRequiredForPayment"}</p>{/if}
-			{if $useCollapsedView}
-				<ul>
-					{foreach from=$publicationFormats item=publicationFormat}
-						{if $publicationFormat->getIsAvailable() && $publicationFormat->getIsApproved()}
-							{include file="catalog/book/bookFiles.tpl" availableFile=$availableFile representationId=$publicationFormat->getId() publishedMonograph=$publishedMonograph currency=$currency}
-						{/if}
-					{/foreach}
-				</ul>
-			{else}
-				{foreach from=$publicationFormats item=publicationFormat}
-					{assign var=representationId value=$publicationFormat->getId()}
-					{if $publicationFormat->getIsAvailable() && $availableFiles[$representationId]}
-						<div class="publicationFormatDownload" id="publicationFormat-download-{$representationId|escape}">
-							{$publicationFormat->getLocalizedName()|escape}
-							<ul>
-								{include file="catalog/book/bookFiles.tpl" availableFile=$availableFile representationId=$representationId publishedMonograph=$publishedMonograph currency=$currency}
-							</ul>
-						</div>
-					{/if}
-				{/foreach}
-			{/if}{* useCollapsedView *}
+			<ul>
+				{include file="catalog/book/bookFiles.tpl" availableFile=$availableFile publishedMonograph=$publishedMonograph currency=$currency}
+			</ul>
 		</div>
 		{/if}
 		{if !is_null($sharingCode) || !empty($blocks)}
@@ -118,3 +85,4 @@
 		{/if}
 	</div>
 </div>
+
