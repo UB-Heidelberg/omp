@@ -13,3 +13,18 @@
 [submodule "plugins/generic/tinymce"]
 	path = plugins/generic/tinymce
 	url = git://github.com/pkp/tinymce
+[submodule "plugins/metadata/xmdp22"]
+	path = plugins/metadata/xmdp22
+	url = https://github.com/UB-Heidelberg/xmdp22.git
+[submodule "plugins/metadata/epc10"]
+	path = plugins/metadata/epc10
+	url = https://github.com/UB-Heidelberg/epc10.git
+[submodule "plugins/oaiMetadataFormats/xmdp"]
+	path = plugins/oaiMetadataFormats/xmdp
+	url = https://github.com/UB-Heidelberg/xmdp.git
+[submodule "plugins/oaiMetadataFormats/epc"]
+	path = plugins/oaiMetadataFormats/epc
+	url = https://github.com/UB-Heidelberg/epc.git
+[submodule "plugins/pubIds/urn_dnb"]
+	path = plugins/pubIds/urn_dnb
+	url = https://github.com/UB-Heidelberg/urn_dnb.git
