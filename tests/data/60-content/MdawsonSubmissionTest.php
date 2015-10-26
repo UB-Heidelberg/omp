@@ -105,17 +105,17 @@ class MdawsonSubmissionTest extends ContentBaseTestCase {
 
 		$this->findSubmissionAsEditor('dbarnes', null, $title);
 		$this->sendToReview('Internal');
-		$this->waitForElementPresent('//a[contains(text(), \'Internal Review\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'Internal Review\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignReviewer('jjanssen', 'Julie Janssen');
 		$this->sendToReview('External', 'Internal');
-		$this->waitForElementPresent('//a[contains(text(), \'External Review\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'External Review\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignReviewer('alzacharia', 'Al Zacharia');
 		$this->waitJQuery();
 		$this->recordEditorialDecision('Accept Submission');
-		$this->waitForElementPresent('//a[contains(text(), \'Editorial\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'Editorial\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignParticipant('Copyeditor', 'Maria Fritz');
 		$this->recordEditorialDecision('Send To Production');
-		$this->waitForElementPresent('//a[contains(text(), \'Production\')]/div[contains(text(), \'Initiated\')]');
+		$this->waitForElementPresent('//a[contains(text(), \'Production\')]/*[contains(text(), \'Initiated\')]');
 		$this->assignParticipant('Layout Editor', 'Graham Cox');
 		$this->assignParticipant('Proofreader', 'Sabine Kumar');
 		$this->waitJQuery();
@@ -124,9 +124,9 @@ class MdawsonSubmissionTest extends ContentBaseTestCase {
 		$this->click('css=[id^=catalogEntry-button-]');
 		$this->waitForElementPresent($selector = '//a[@class="ui-tabs-anchor" and text()="Catalog"]');
 		$this->click($selector);
-		$this->waitForElementPresent('css=[id=confirm]');
-		$this->click('css=[id=confirm]');
-		$this->click('css=[id^=submitFormButton-]');
+		$this->waitForElementPresent($selector='css=[id=confirm]');
+		$this->click($selector);
+		$this->click('//form[@id=\'catalogMetadataEntryForm\']//button[text()=\'Save\']');
 
 		$this->logOut();
 	}

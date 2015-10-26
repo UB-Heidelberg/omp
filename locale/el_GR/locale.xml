@@ -11,7 +11,7 @@
   * Localization strings.
   -->
 
-<locale name="el_GR" full_name="Greek">
+<locale name="el_GR" full_name="ελληνικά">
 	<!-- General monograph keys -->
 	<message key="monograph.audience">Κοινό</message>
 	<message key="monograph.coverImage">Εικόνα Εξωφύλλου</message>
@@ -138,7 +138,6 @@
 	<message key="grid.catalogEntry.representativeName">Όνομα</message>
 	<message key="grid.catalogEntry.roleRequired">Απαιτείται ένας ρόλος αντιπροσώπου.</message>
 	<message key="grid.catalogEntry.representativePhone">Τηλέφωνο</message>
-	<message key="grid.catalogEntry.representativeFax">Fax</message>
 	<message key="grid.catalogEntry.representativeEmail">Email</message>
 	<message key="grid.catalogEntry.representativeWebsite">Ιστότοπος</message>
 	<message key="grid.catalogEntry.representativeIdValue">Αναγνωριστικό Αντιπροσώπου</message>

@@ -26,6 +26,7 @@ class TemplateManager extends PKPTemplateManager {
 	 */
 	function TemplateManager($request) {
 		parent::PKPTemplateManager($request);
+		AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON);
 
 		if (!defined('SESSION_DISABLE_INIT')) {
 			/**
@@ -70,6 +71,20 @@ class TemplateManager extends PKPTemplateManager {
 				if ($contextStyleSheet) {
 					$this->addStyleSheet($request->getBaseUrl() . '/' . $publicFileManager->getContextFilesPath(ASSOC_TYPE_PRESS, $context->getId()) . '/' . $contextStyleSheet['uploadName'], STYLE_SEQUENCE_LAST);
 				}
+
+				// Get context info for use in primary navigation items
+				import('pages.about.AboutContextHandler');;
+				if (in_array('IAboutContextInfoProvider', class_implements('AboutContextHandler'))) {
+					$this->assign('contextInfo', AboutContextHandler::getAboutInfo($context));
+				}
+
+				// Get a link to the settings page for the current context.
+				// This allows us to reduce template duplication by using this
+				// variable in templates/common/header.tpl, instead of
+				// reproducing a lot of OMP/OJS-specific logic there.
+				$router = $request->getRouter();
+				$dispatcher = $request->getDispatcher();
+				$this->assign( 'contextSettingsUrl', $dispatcher->url($request, ROUTE_PAGE, null, 'management', 'settings', 'press') );
 
 				// Include footer links if they have been defined.
 				$footerCategoryDao = DAORegistry::getDAO('FooterCategoryDAO');

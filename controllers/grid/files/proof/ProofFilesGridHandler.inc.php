@@ -13,33 +13,35 @@
  * @brief Subclass of file editor/auditor grid for proof files.
  */
 
-// import grid signoff files grid base classes
-import('controllers.grid.files.signoff.SignoffFilesGridHandler');
+import('lib.pkp.controllers.grid.files.fileList.FileListGridHandler');
 
-// Import monograph file class which contains the SUBMISSION_FILE_* constants.
-import('classes.monograph.MonographFile');
-
-// Import SUBMISSION_EMAIL_* constants.
-import('classes.mail.MonographMailTemplate');
-
-class ProofFilesGridHandler extends SignoffFilesGridHandler {
+class ProofFilesGridHandler extends FileListGridHandler {
 	/**
 	 * Constructor
 	 */
 	function ProofFilesGridHandler() {
-		parent::SignoffFilesGridHandler(
+		import('lib.pkp.controllers.grid.files.proof.ProofFilesGridDataProvider');
+		parent::FileListGridHandler(
+			new ProofFilesGridDataProvider(),
 			WORKFLOW_STAGE_ID_PRODUCTION,
-			SUBMISSION_FILE_PROOF,
-			'SIGNOFF_PROOFING',
-			SUBMISSION_EMAIL_PROOFREAD_NOTIFY_AUTHOR,
-			ASSOC_TYPE_PUBLICATION_FORMAT
+			FILE_GRID_ADD|FILE_GRID_MANAGE|FILE_GRID_DELETE|FILE_GRID_VIEW_NOTES|FILE_GRID_EDIT
+		);
+
+		$this->addRoleAssignment(
+			array(ROLE_ID_SUB_EDITOR, ROLE_ID_MANAGER, ROLE_ID_ASSISTANT),
+			array(
+				'fetchGrid', 'fetchRow',
+				'addFile', 'selectFiles',
+				'downloadFile',
+				'deleteFile',
+			)
 		);
 		$this->addRoleAssignment(
 			array(ROLE_ID_SUB_EDITOR, ROLE_ID_MANAGER),
-			array('selectFiles')
+			array(
+				'setApproval',
+			)
 		);
-
-		$this->setEmptyCategoryRowText('grid.noAuditors');
 	}
 
 	//
@@ -50,23 +52,9 @@ class ProofFilesGridHandler extends SignoffFilesGridHandler {
 	 * @param PKPRequest $request
 	 */
 	function initialize($request) {
-		$publicationFormat =& $this->getPublicationFormat();
-		$this->setAssocId($publicationFormat->getId());
-
 		parent::initialize($request);
 
 		$router = $request->getRouter();
-
-		// Add a "select files" action for editors / subeditors
-		$userRoles = $this->getAuthorizedContextObject(ASSOC_TYPE_USER_ROLES);
-		if (array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR), $userRoles)) {
-			import('lib.pkp.controllers.grid.files.fileList.linkAction.SelectFilesLinkAction');
-			$this->addAction(new SelectFilesLinkAction(
-				$request,
-				$this->getRequestArgs(),
-				__('editor.submission.selectFiles')
-			));
-		}
 
 		// Add a "view document library" action
 		$this->addAction(
@@ -83,28 +71,37 @@ class ProofFilesGridHandler extends SignoffFilesGridHandler {
 		);
 
 		// Basic grid configuration
-		$this->setId('proofFiles-' . $this->getAssocId());
+		$representation = $this->getAuthorizedContextObject(ASSOC_TYPE_REPRESENTATION);
+		$this->setId('proofFiles-' . $representation->getId());
 		$this->setTitle('submission.pageProofs');
 		$this->setInstructions('monograph.proofReadingDescription');
+
+		import('controllers.grid.files.proof.ProofFilesGridCellProvider');
+		$cellProvider = new ProofFilesGridCellProvider();
+		$this->addColumn(new GridColumn(
+			'approved',
+			'editor.signoff.approved',
+			null,
+			'controllers/grid/common/cell/statusCell.tpl',
+			$cellProvider
+		));
 	}
 
 	/**
-	 * @see SignoffFilesGridHandler::getRowInstance()
+	 * Authorize the request.
+	 * @param $request PKPRequest
+	 * @param $args array
+	 * @param $roleAssignments array
+	 * @return boolean
 	 */
-	function getRowInstance() {
-		$row = parent::getRowInstance();
-		$row->setRequestArgs($this->getRequestArgs());
-		return $row;
-	}
+	function authorize($request, $args, $roleAssignments) {
+		import('lib.pkp.classes.security.authorization.SubmissionAccessPolicy');
+		$this->addPolicy(new SubmissionAccessPolicy($request, $args, $roleAssignments));
 
-	/**
-	 * @see GridHandler::getRequestArgs()
-	 */
-	function getRequestArgs() {
-		return array_merge(
-			parent::getRequestArgs(),
-			array('representationId' => $this->getAssocId())
-		);
+		import('lib.pkp.classes.security.authorization.internal.RepresentationRequiredPolicy');
+		$this->addPolicy(new RepresentationRequiredPolicy($request, $args));
+
+		return parent::authorize($request, $args, $roleAssignments);
 	}
 
 
@@ -125,6 +122,38 @@ class ProofFilesGridHandler extends SignoffFilesGridHandler {
 		$manageProofFilesForm = new ManageProofFilesForm($submission->getId(), $publicationFormat->getId());
 		$manageProofFilesForm->initData($args, $request);
 		return new JSONMessage(true, $manageProofFilesForm->fetch($request));
+	}
+
+	/**
+	 * Set the approval status for a file.
+	 * @param $args array
+	 * @param $request PKPRequest
+	 */
+	function setApproval($args, $request) {
+		$submission = $this->getSubmission();
+		$publicationFormat = $this->getAuthorizedContextObject(ASSOC_TYPE_PUBLICATION_FORMAT);
+		$submissionFileDao = DAORegistry::getDAO('SubmissionFileDAO');
+		import('lib.pkp.classes.submission.SubmissionFile'); // Constants
+		$submissionFile = $submissionFileDao->getRevision(
+			$request->getUserVar('fileId'),
+			$request->getUserVar('revision'),
+			SUBMISSION_FILE_PROOF,
+			$submission->getId()
+		);
+		if ($submissionFile && $submissionFile->getAssocType()==ASSOC_TYPE_REPRESENTATION && $submissionFile->getAssocId()==$publicationFormat->getId()) {
+			// Update the approval flag
+			$submissionFile->setViewable($request->getUserVar('approval')?1:0);
+			$submissionFileDao->updateObject($submissionFile);
+
+			// Log the event
+			import('lib.pkp.classes.log.SubmissionFileLog');
+			import('lib.pkp.classes.log.SubmissionFileEventLogEntry'); // constants
+			$user = $request->getUser();
+			SubmissionFileLog::logEvent($request, $submissionFile, SUBMISSION_LOG_FILE_SIGNOFF_SIGNOFF, 'submission.event.signoffSignoff', array('file' => $submissionFile->getOriginalFileName(), 'name' => $user->getFullName(), 'username' => $user->getUsername()));
+
+			return DAO::getDataChangedEvent($submissionFile->getFileId());
+		}
+		return new JSONMessage(false);
 	}
 }
 

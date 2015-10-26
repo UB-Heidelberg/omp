@@ -1,0 +1,76 @@
+/**
+ * @file  plugins/themes/default/styles/pages/index.less
+ *
+ * Copyright (c) 2014-2015 Simon Fraser University Library
+ * Copyright (c) 2003-2015 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles applying to the front page of the site
+ * @link templates/frontend/pages/index.tpl
+ */
+.pkp_page_index {
+
+	// Put first row flush with navigation menu
+	.pkp_structure_main {
+		padding-top: 0;
+	}
+
+	.row {
+		padding-top: @double * 2;
+		padding-bottom: @double * 2;
+		border-bottom: @bg-border;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		h2 {
+			display: block;
+			margin-top: 0;
+			margin-bottom: @base;
+			font-size: @font-lead;
+			line-height: @line-lead;
+			font-weight: @bold;
+		}
+
+		@media (min-width: @screen-tablet) {
+
+			h2 {
+				text-align: center;
+				margin-bottom: @double;
+			}
+		}
+
+		@media (min-width: @screen-desktop) {
+
+			h2 {
+				font-size: @font-header;
+				line-height: @line-header;
+			}
+		}
+	}
+
+	.row_new_releases {
+
+		h2 {
+			margin-bottom: @double * 2;
+		}
+
+		.title {
+			font-size: @font-bump;
+			line-height: @line-bump;
+		}
+
+		.author {
+			font-size: @font-base;
+			line-height: @line-base;
+		}
+
+		@media (min-width: @screen-desktop) {
+
+			.cmp_monographs_list {
+				max-width: 40em;
+			}
+		}
+	}
+}

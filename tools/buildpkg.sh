@@ -9,19 +9,18 @@
 #
 # Script to create an OMP package for distribution.
 #
-# Usage: buildpkg.sh <version> [<tag>] [<patch_dir>]
+# Usage: buildpkg.sh <version> [<tag>]
 #
 
 GITREP=git://github.com/pkp/omp.git
 
 if [ -z "$1" ]; then
-	echo "Usage: $0 <version> [<tag>-<branch>] [<patch_dir>]";
+	echo "Usage: $0 <version> [<tag>-<branch>]";
 	exit 1;
 fi
 
 VERSION=$1
 TAG=$2
-PATCHDIR=${3-}
 PREFIX=omp
 BUILD=$PREFIX-$VERSION
 TMPDIR=`mktemp -d $PREFIX.XXXXXX` || exit 1
@@ -81,21 +80,17 @@ lib/pkp/lib/swordappv2/test"
 cd $TMPDIR
 
 echo -n "Cloning $GITREP and checking out tag $TAG ... "
-git clone -q -n $GITREP $BUILD || exit 1
+git clone -b $TAG --depth 1 -q -n $GITREP $BUILD || exit 1
 cd $BUILD
 git checkout -q $TAG || exit 1
 echo "Done"
 
-echo -n "Checking out corresponding submodule ... "
-git submodule -q update --init >/dev/null || exit 1
-echo "Done"
-
-echo -n "Checking out submodule submodules ... "
-cd lib/pkp
-git submodule -q update --init >/dev/null || exit 1
+echo -n "Checking out corresponding submodules ... "
+git submodule -q update --init --recursive >/dev/null || exit 1
 echo "Done"
 
 echo -n "Installing composer dependencies ... "
+cd lib/pkp
 composer.phar update
 cd ../..
 
@@ -110,21 +105,6 @@ cd ..
 echo -n "Creating archive $BUILD.tar.gz ... "
 tar -zhcf ../$BUILD.tar.gz $BUILD
 echo "Done"
-
-if [ ! -z "$PATCHDIR" ]; then
-	echo "Creating patches in $BUILD.patch ..."
-	[ -e "../${BUILD}.patch" ] || mkdir "../$BUILD.patch"
-	for FILE in $PATCHDIR/*; do
-		OLDBUILD=$(basename $FILE)
-		OLDVERSION=${OLDBUILD/$PREFIX-/}
-		OLDVERSION=${OLDVERSION/.tar.gz/}
-		echo -n "Creating patch against ${OLDVERSION} ... "
-		tar -zxf $FILE
-		diff -urN $PREFIX-$OLDVERSION $BUILD | gzip -c > ../${BUILD}.patch/$PREFIX-${OLDVERSION}_to_${VERSION}.patch.gz
-		echo "Done"
-	done
-	echo "Done"
-fi
 
 cd ..
 

@@ -60,6 +60,7 @@
 <script src="{$baseUrl}/lib/pkp/js/controllers/ExtrasOnDemandHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/PageHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/TabHandler.js"></script>
+<script src="{$baseUrl}/lib/pkp/js/controllers/MenuHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/UploaderHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/AutocompleteHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/RangeSliderHandler.js"></script>
@@ -71,6 +72,7 @@
 <script src="{$baseUrl}/lib/pkp/js/controllers/form/ToggleFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/form/FileUploadFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/form/MultilingualInputHandler.js"></script>
+<script src="{$baseUrl}/lib/pkp/js/controllers/form/CancelActionAjaxFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/form/reviewer/ReviewerReviewStep3FormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/grid/GridHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/grid/CategoryGridHandler.js"></script>
@@ -80,17 +82,16 @@
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/ConfirmationModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/RedirectConfirmationModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/RemoteActionConfirmationModalHandler.js"></script>
-<script src="{$baseUrl}/lib/pkp/js/controllers/modal/CallbackConfirmationModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/ButtonConfirmationModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/JsEventConfirmationModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/AjaxModalHandler.js"></script>
-<script src="{$baseUrl}/lib/pkp/js/controllers/modal/AjaxLegacyPluginModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modal/WizardModalHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/modals/editorDecision/form/EditorDecisionFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/linkAction/LinkActionHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/wizard/WizardHandler.js"></script>
 
 {* Specific controllers *}
+<script src="{$baseUrl}/lib/pkp/js/controllers/grid/queries/ReadQueryHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/wizard/fileUpload/FileUploadWizardHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/wizard/fileUpload/form/FileUploadFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/wizard/fileUpload/form/RevisionConfirmationHandler.js"></script>
@@ -99,8 +100,8 @@
 <script src="{$baseUrl}/lib/pkp/js/controllers/tab/settings/permissions/form/PermissionSettingsFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/tab/settings/paymentMethod/PaymentMethodHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/grid/notifications/NotificationsGridHandler.js"></script>
-<script src="{$baseUrl}/lib/pkp/js/pages/header/ContextSwitcherFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/pages/header/HeaderHandler.js"></script>
+<script src="{$baseUrl}/lib/pkp/js/pages/header/TasksHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/pages/admin/ContextsHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/pages/submission/SubmissionTabHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/grid/settings/user/form/UserFormHandler.js"></script>
@@ -128,7 +129,6 @@
 <script src="{$baseUrl}/lib/pkp/js/controllers/grid/users/stageParticipant/form/StageParticipantNotifyHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/controllers/grid/users/stageParticipant/form/AddParticipantFormHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/pages/reviewer/ReviewerTabHandler.js"></script>
-<script src="{$baseUrl}/lib/pkp/js/pages/authorDashboard/PKPAuthorDashboardHandler.js"></script>
 <script src="{$baseUrl}/lib/pkp/js/pages/authorDashboard/SubmissionEmailHandler.js"></script>
 <script src="{$baseUrl}/js/controllers/grid/content/spotlights/form/SpotlightFormHandler.js"></script>
 <script src="{$baseUrl}/js/controllers/modals/editorDecision/ApproveProofsHandler.js"></script>
@@ -140,14 +140,11 @@
 <script src="{$baseUrl}/js/controllers/tab/catalogEntry/CatalogEntryTabHandler.js"></script>
 <script src="{$baseUrl}/js/controllers/catalog/form/CatalogMetadataFormHandler.js"></script>
 <script src="{$baseUrl}/js/controllers/monographList/MonographListHandler.js"></script>
-<script src="{$baseUrl}/js/pages/catalog/CarouselHandler.js"></script>
-<script src="{$baseUrl}/js/pages/catalog/MonographPublicListHandler.js"></script>
 <script src="{$baseUrl}/js/pages/manageCatalog/ManageCatalogHeaderHandler.js"></script>
 <script src="{$baseUrl}/js/pages/manageCatalog/ManageCatalogModalHandler.js"></script>
 <script src="{$baseUrl}/js/pages/manageCatalog/ManageCatalogSearchFormHandler.js"></script>
 <script src="{$baseUrl}/js/pages/manageCatalog/MonographManagementListHandler.js"></script>
 <script src="{$baseUrl}/js/pages/manageCatalog/MonographHandler.js"></script>
-<script src="{$baseUrl}/js/pages/authorDashboard/AuthorDashboardHandler.js"></script>
 
 {* Our own plug-in (depends on classes) *}
 <script src="{$baseUrl}/lib/pkp/js/lib/jquery/plugins/jquery.pkp.js"></script>

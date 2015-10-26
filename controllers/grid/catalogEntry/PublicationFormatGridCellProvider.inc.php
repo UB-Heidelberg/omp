@@ -139,7 +139,6 @@ class PublicationFormatGridCellProvider extends DataObjectGridCellProvider {
 			case 'proofComplete':
 				import('controllers.api.proof.linkAction.ApproveProofsLinkAction');
 				return array(new ApproveProofsLinkAction($request, $monographId, $representationId, $this->getCellState($row, $column)));
-				break;
 			case 'isApproved':
 				if ($this->getInCatalogEntryModal()) {
 					import('lib.pkp.classes.linkAction.request.NullAction');
@@ -149,7 +148,6 @@ class PublicationFormatGridCellProvider extends DataObjectGridCellProvider {
 					import('controllers.modals.submissionMetadata.linkAction.SubmissionEntryLinkAction');
 					return array(new SubmissionEntryLinkAction($request, $monographId, WORKFLOW_STAGE_ID_PRODUCTION, $representationId, $this->getCellState($row, $column)));
 				}
-				break;
 			case 'isAvailable':
 				$router = $request->getRouter();
 				$publishedMonographDao = DAORegistry::getDAO('PublishedMonographDAO');
@@ -186,14 +184,12 @@ class PublicationFormatGridCellProvider extends DataObjectGridCellProvider {
 						$router->url($request, null, 'grid.catalogEntry.PublicationFormatGridHandler',
 							'setAvailable', null, array('representationId' => $publicationFormat->getId(), 'newAvailableState' => $publicationFormat->getIsAvailable()?0:1, 'submissionId' => $monographId)),
 						'modal_approve'),
-						__('manager.emails.disable'),
+						__('common.disable'),
 						$this->getCellState($row, $column),
 						$toolTip
 				));
-				break;
-			default:
-				return array();
 		}
+		return parent::getCellActions($request, $row, $column);
 	}
 
 	/**
