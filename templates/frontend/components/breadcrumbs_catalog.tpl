@@ -1,5 +1,5 @@
 {**
- * templates/frontend/components/breadcrumb.tpl
+ * templates/frontend/components/breadcrumbs_catalog.tpl
  *
  * Copyright (c) 2014-2015 Simon Fraser University Library
  * Copyright (c) 2003-2015 John Willinsky
@@ -15,8 +15,14 @@
  * @uses $currentTitleKey string Translation key for title of current page.
  *}
 
-<nav class="cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
+<nav class="cmp_breadcrumbs cmp_breadcrumbs_catalog" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
 	<ol>
+		<li>
+			<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
+				{translate key="common.homepageNavigationLabel"}
+			</a>
+			<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
+		</li>
 		<li>
 			<a href="{url router=$smarty.const.ROUTE_PAGE page="catalog"}">
 				{translate key="navigation.catalog"}
@@ -26,17 +32,19 @@
 		{if $parent}
 			<li>
 				<a href="{url op=$type path=$parent->getPath()}">
-					{$parent->getLocalizedTitle()}
+					{$parent->getLocalizedTitle()|escape}
 				</a>
 				<span class="separator">{translate key="navigation.breadcrumbSeparator"}</span>
 			</li>
 		{/if}
 		<li class="current">
-			{if $currentTitleKey}
-				{translate key=$currentTitleKey}
-			{else}
-				{$currentTitle}
-			{/if}
+			<h1>
+				{if $currentTitleKey}
+					{translate key=$currentTitleKey}
+				{else}
+					{$currentTitle|escape}
+				{/if}
+			</h1>
 		</li>
 	</ol>
 </nav>

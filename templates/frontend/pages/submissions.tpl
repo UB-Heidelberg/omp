@@ -12,10 +12,8 @@
 {include file="common/frontend/header.tpl" pageTitle="about.submissions"}
 
 <div class="page page_submissions">
-	<h1 class="page_title">
-		{translate key="about.submissions"}
-		{include file="frontend/components/editLink.tpl" page="management" op="settings" path="press" anchor="guidelines" sectionTitleKey="about.submissions"}
-	</h1>
+	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.submissions"}
+	{include file="frontend/components/editLink.tpl" page="management" op="settings" path="press" anchor="guidelines" sectionTitleKey="about.submissions"}
 
 	{* Login/register prompt *}
 	{capture assign="login"}
@@ -35,7 +33,7 @@
 				{translate key="about.authorGuidelines"}
 				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="press" anchor="guidelines" sectionTitleKey="about.authorGuidelines"}
 			</h2>
-			{$submissionInfo.authorGuidelines|nl2br}
+			{$submissionInfo.authorGuidelines|nl2br|strip_unsafe_html}
 		</div>
 	{/if}
 
@@ -49,7 +47,7 @@
 			<ul>
 				{foreach from=$submissionInfo.checklist item=checklistItem}
 					<li>
-						{$checklistItem.content|nl2br}
+						{$checklistItem.content|nl2br|strip_unsafe_html}
 					</li>
 				{/foreach}
 			</ul>
@@ -62,7 +60,7 @@
 				{translate key="about.copyrightNotice"}
 				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="distribution" anchor="permissions" sectionTitleKey="about.copyrightNotice"}
 			</h2>
-			{$submissionInfo.copyrightNotice|nl2br}
+			{$submissionInfo.copyrightNotice|nl2br|strip_unsafe_html}
 		</div>
 	{/if}
 
@@ -72,7 +70,9 @@
 				{translate key="about.privacyStatement"}
 				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="press" anchor="policies" sectionTitleKey="about.privacyStatement"}
 			</h2>
-			{$submissionInfo.privacyStatement|nl2br}
+			<p>
+				{$submissionInfo.privacyStatement|nl2br|strip_unsafe_html}
+			</p>
 		</div>
 	{/if}
 
@@ -82,7 +82,9 @@
 				{translate key="about.reviewPolicy"}
 				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="press" anchor="policies" sectionTitleKey="about.reviewPolicy"}
 			</h2>
-			{$submissionInfo.reviewPolicy|nl2br}
+			<p>
+				{$submissionInfo.reviewPolicy|nl2br|strip_unsafe_html}
+			</p>
 		</div>
 	{/if}
 
