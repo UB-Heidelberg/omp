@@ -28,3 +28,6 @@
 [submodule "plugins/pubIds/urn_dnb"]
 	path = plugins/pubIds/urn_dnb
 	url = https://github.com/UB-Heidelberg/urn_dnb.git
+[submodule "plugins/generic/defaultTranslation"]
+	path = plugins/generic/defaultTranslation
+	url = https://github.com/UB-Heidelberg/defaultTranslation.git
