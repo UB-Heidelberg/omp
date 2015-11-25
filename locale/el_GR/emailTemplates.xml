@@ -82,7 +82,6 @@
 		<body><![CDATA[Η επαναφορά (αλλαγή) του κωδικού πρόσβασής σας πραγματοποιήθηκε επιτυχώς για χρήση στον ιστότοπο {$siteTitle} . Παρακαλούμε διατηρήστε το συγκεκριμένο όνομα χρήστη και τον κωδικό πρόσβασης, καθώς είναι απαραίτητα για όλες τις εργασίες σας στην έκδοση.<br />
 <br />
 Όνομα χρήστη: {$username}<br />
-Νέος κωδικός πρόσβασης: {$password}<br />
 <br />
 {$principalContactSignature}]]></body>
 		<description>Το συγκεκριμένο μήνυμα ηλεκτρονικού ταχυδρομείου αποστέλλεται σε εγγεγραμμένους χρήστες αφού ολοκληρώσουν επιτυχώς την επαναφορά του κωδικού πρόσβασής τους ακολουθώντας τη διαδικασία που περιγράφεται στο email PASSWORD_RESET_CONFIRM.</description>
@@ -143,7 +142,7 @@
 <br />
 Ευχαριστούμε για την υποβολή της εργασίας σας, &quot;{$submissionTitle}&quot; στις εκδόσεις {$contextName}. Με το online σύστημα διαχείρισης που χρησιμοποιούν οι εκδόσεις, θα μπορείτε, συνδεόμενοι στον ιστότοπο των εκδόσεων, να παρακολουθείτε την πορεία της υποβολής σας στην διαδικασία της επιμέλειας:<br />
 <br />
-URL υποβολής: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL υποβολής: {$submissionUrl}<br />
 Όνομα χρήστη: {$authorUsername}<br />
 <br />
 Για περισσότερες πληροφορίες παρακαλούμε επικοινωνήστε μαζί μας. Ευχαριστούμε που θεωρείτε τις εκδόσεις  αυτές ως τον κατάλληλο χώρο για να δημοσιεύετε την εργασία σας. <br />
@@ -178,7 +177,7 @@ URL υποβολής: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 Στο πλαίσιο του ρόλου σας ως Επιμελητή, σας έχει ανατεθεί η παρακολούθηση της υποβολή, &quot;{$submissionTitle},&quot; στις εκδόσεις {$contextName} σε όλη τη διάρκεια της διαδικασίας επιμέλειας.  <br />
 <br />
-URL Υποβολής: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Υποβολής: {$submissionUrl}<br />
 Όνομα χρήστη: {$editorUsername}<br />
 <br />
 Thank you,<br />
@@ -352,7 +351,7 @@ URL Υποβολής: <a href="{$submissionReviewUrl}">{$submissionReviewUrl}</a
 <br />
 <br />
 <br />
-URL Εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Εργασίας: {$submissionUrl}<br />
 Username: {$authorUsername}<br />
 <br />
 {$editorialContactSignature}]]></body>
@@ -366,7 +365,7 @@ Username: {$authorUsername}<br />
 <br />
 <br />
 <br />
-URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL εργασίας: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email from the Editor or Series Editor to an Author notifies them that their submission is being sent to an external review.</description>
@@ -377,7 +376,7 @@ URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 Η επιμέλεια της εργασίας σας με τίτλο, &quot;{$submissionTitle},&quot; έχει ολοκληρωθεί.  Η εργασία σας έχει αποσταλεί ώστε να ξεκινήσει η διαδικασία παραγωγής, επεξεργασίας και δημοσίευσης του έργου σας.<br />
 <br />
-URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL εργασίας: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email from the Editor or Series Editor to an Author notifies them that their submission is being sent to production.</description>
@@ -390,7 +389,7 @@ URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 <br />
 <br />
-URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL εργασίας: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email from the Editor or Series Editor to an Author notifies them of a final decision regarding their submission.</description>
@@ -403,7 +402,7 @@ URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 <br />
 <br />
-URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL εργασίας: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email from the Editor or Series Editor to an Author notifies them of a final decision regarding their submission.</description>
@@ -416,7 +415,7 @@ URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
 <br />
 <br />
 <br />
-URL εργασίας: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL εργασίας: {$submissionUrl}<br />
 <br />
 {$editorialContactSignature}]]></body>
 		<description>This email from the Editor or Series Editor to an Author notifies them of a final decision regarding their submission.</description>
@@ -451,7 +450,7 @@ URL Υποβολής: <a href="{$submissionCopyeditingUrl}">{$submissionCopyedit
 3. Αποστείλατε το μήνυμα ΟΛΟΚΛΗΡΩΜΕΝΟ στον επιμελητή.<br />
 <br />
 {$contextName} URL: <a href="{$contextUrl}">{$contextUrl}</a><br />
-Submission URL: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+Submission URL: {$submissionUrl}<br />
 Username: {$layoutEditorUsername}<br />
 <br />
 Εάν δεν μπορείτε να αναλάβετε τη συγκεκριμένη εργασία αυτή τη στιγμή ή έχετε απορίες, επικοινωνήστε μαζί μας. Ευχαριστούμε για την συμβολή σας σε αυτή την έκδοση.<br />
@@ -480,7 +479,7 @@ Username: {$layoutEditorUsername}<br />
 3. Αποστείλατε το μήνυμα ΟΛΟΚΛΗΡΩΜΕΝΟ στον επιμελητή.<br />
 <br />
 {$contextName} URL: <a href="{$contextUrl}">{$contextUrl}</a><br />
-URL Υποβολής: <a href="{$submissionUrl}">{$submissionUrl}</a><br />
+URL Υποβολής: {$submissionUrl}<br />
 όνομα Χρήστη: {$indexerUsername}<br />
 <br />
 Εάν δεν μπορείτε να αναλάβετε την συγκεκριμένη εργασία αυτή τη στιγμή ή έχετε απορίες, επικοινωνήστε μαζί μας. Ευχαριστούμε για την συμβολή σας στη συγκεκριμένη έκδοση.<br />
