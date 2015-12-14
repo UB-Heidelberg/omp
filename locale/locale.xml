@@ -35,7 +35,7 @@
 	<message key="monograph.publicationFormat.imprint">Impressum (Marken-/Verlagsname)</message>
 	<message key="monograph.publicationFormat.pageCounts">Seitenanzahl</message>
 	<message key="monograph.publicationFormat.frontMatterCount">Titelei</message>
-	<message key="monograph.publicationFormat.backMatterCount">Anhang</message>
+	<message key="monograph.publicationFormat.backMatterCount">Nachspann</message>
 	<message key="monograph.publicationFormat.productComposition">Produktzusammensetzung</message>
 	<message key="monograph.publicationFormat.productFormDetailCode">Produktangaben (nicht erforderlich)</message>
 	<message key="monograph.publicationFormat.productIdentifierType">Produktcode</message>
@@ -54,9 +54,9 @@
 	<message key="monograph.publicationFormat.productThickness">Dicke</message>
 	<message key="monograph.publicationFormat.productWeight">Gewicht</message>
 	<message key="monograph.publicationFormat.productWidth">Breite</message>
-	<message key="monograph.publicationFormat.countryOfManufacture">Ursprungsland</message>
+	<message key="monograph.publicationFormat.countryOfManufacture">Herstellungsland</message>
 
-	<message key="monograph.publicationFormat.technicalProtection">Digitale technische Schutzmaßnahmen (Digital Rights Management)</message>
+	<message key="monograph.publicationFormat.technicalProtection">Digitale technische Schutzmaßnahmen</message>
 	<message key="monograph.publicationFormat.productRegion">Vertriebsregion</message>
 	<message key="monograph.publicationFormat.taxRate">Steuersatz</message>
 	<message key="monograph.publicationFormat.taxType">Steuerart</message>
@@ -68,7 +68,7 @@
 	<message key="monograph.publicationFormat.missingONIXFields">Einige Metadatenfelder wurden nicht ausgefüllt.</message>
 
 	<message key="monograph.publicationFormat.formatDoesNotExist"><![CDATA[<p>Das von Ihnen gewählte Format steht für diese Monografie nicht mehr zur Verfügung.</p>]]></message>
-	<message key="monograph.publicationFormat.openTab">Öffne Reiter Format.</message>
+	<message key="monograph.publicationFormat.openTab">Öffne Reiter Publikationsform.</message>
 	<!-- assigned publication format grid and form keys -->
 	<message key="grid.catalogEntry.publicationFormatType">Format</message>
 	<message key="grid.catalogEntry.nameRequired">Eine Namensangabe ist erforderlich.</message>
@@ -79,12 +79,12 @@
 	<message key="grid.catalogEntry.publicationFormatRequired">Bitte wählen Sie ein Publikationsformat.</message>
 	<message key="grid.catalogEntry.isAvailable">Verfügbar</message>
 	<message key="grid.catalogEntry.proof">Korrekturfahne</message>
-	<message key="grid.catalogEntry.availablePublicationFormat.title">Annahme dieses Formats</message>
-	<message key="grid.catalogEntry.availablePublicationFormat.message"><![CDATA[<p>Das Buch wird nun in diesem Format den Leser/innen <em>verfügbar</em> gemacht: als Datei, die vom Katalog aus heruntergeladen werden kann, und/oder durch weitere Vertriebsmaßnahmen des Verlags.</p>]]></message>
-	<message key="grid.catalogEntry.availablePublicationFormat.removeMessage"><![CDATA[<p>In diesem Format wird das Buch nun für Leser/innen <em> nicht mehr angeboten</em> werden, weder über eine Downloadmöglichkeit im Katalog noch über weitere Vertriebsmaßnahmen des Verlags.</p>.]]></message>
-	<message key="grid.catalogEntry.availablePublicationFormat.catalogNotApprovedWarning">Katalogeintrag nicht akzeptiert.</message>
-	<message key="grid.catalogEntry.availablePublicationFormat.notApprovedWarning">Dieses Format ist nicht im Katalogeintrag enthalten.</message>
-	<message key="grid.catalogEntry.availablePublicationFormat.proofNotApproved">Korrekturfahne nicht akzeptiert.</message>
+	<message key="grid.catalogEntry.availableRepresentation.title">Annahme dieses Formats</message>
+	<message key="grid.catalogEntry.availableRepresentation.message"><![CDATA[<p>Das Buch wird nun in diesem Format den Leser/innen <em>verfügbar</em> gemacht: als Datei, die vom Katalog aus heruntergeladen werden kann, und/oder durch weitere Vertriebsmaßnahmen des Verlags.</p>]]></message>
+	<message key="grid.catalogEntry.availableRepresentation.removeMessage"><![CDATA[<p>In diesem Format wird das Buch nun für Leser/innen <em> nicht mehr angeboten</em> werden, weder über eine Downloadmöglichkeit im Katalog noch über weitere Vertriebsmaßnahmen des Verlags.</p>.]]></message>
+	<message key="grid.catalogEntry.availableRepresentation.catalogNotApprovedWarning">Katalogeintrag nicht akzeptiert.</message>
+	<message key="grid.catalogEntry.availableRepresentation.notApprovedWarning">Dieses Format ist nicht im Katalogeintrag enthalten.</message>
+	<message key="grid.catalogEntry.availableRepresentation.proofNotApproved">Korrekturfahne nicht akzeptiert.</message>
 
 	<!-- publication metadata required form field keys -->
 	<message key="grid.catalogEntry.fileSizeRequired">Für digitale Formate wird eine Dateigröße benötigt.</message>
@@ -130,13 +130,12 @@
 	<message key="grid.catalogEntry.agentsCategory">Vertreter/innen</message>
 	<message key="grid.catalogEntry.suppliersCategory">Dienstleister</message>
 	<message key="grid.catalogEntry.agent">Vertreter/in</message>
-	<message key="grid.catalogEntry.agentTip">Sie können einen Vertreter bestimmen, der Sie in dem ausgewählten Gebiet repräsentiert. Diese Angabe ist optional.</message>
+	<message key="grid.catalogEntry.agentTip">Sie können eine/n Vertreter/in bestimmen, um Sie in dem ausgewählten Gebiet zu repräsentieren. Diese Angabe ist nicht verpflichtend.</message>
 	<message key="grid.catalogEntry.supplier">Dienstleister</message>
 	<message key="grid.catalogEntry.representativeRoleChoice">Wählen Sie eine Funktion:</message>
 	<message key="grid.catalogEntry.representativeRole">Funktion</message>
 	<message key="grid.catalogEntry.representativeName">Name</message>
 	<message key="grid.catalogEntry.representativePhone">Telefon</message>
-	<message key="grid.catalogEntry.representativeFax">Fax</message>
 	<message key="grid.catalogEntry.representativeEmail">E-Mail-Adresse</message>
 	<message key="grid.catalogEntry.representativeWebsite">Website</message>
 	<message key="grid.catalogEntry.representativeIdValue">Identifkationsnummer des Unternehmens</message>
@@ -150,7 +149,7 @@
 	<!-- Spotlights management -->
 	<message key="spotlight.spotlights">Spotlights</message>
 	<message key="spotlight.noneExist">Aktuell sind keine Spotlights vorhanden</message>
-	<message key="spotlight.title.homePage">Im Spotlight</message>
+	<message key="spotlight.title.homePage">Im Rampenlicht</message>
 	<message key="spotlight.author">Autor,</message>
 	<message key="grid.content.spotlights.spotlightItemTitle">Spotlight-Titel</message>
 	<message key="grid.content.spotlights.category.homepage">Homepage</message>
@@ -189,7 +188,6 @@
 	<message key="grid.action.releaseMonograph">Diesen Titel als 'Neuerscheinung' kennzeichnen</message>
 	<message key="grid.action.manageCategories">Kategorien konfigurieren</message>
 	<message key="grid.action.manageSeries">Reihen konfigurieren</message>
-	<message key="grid.action.editApprovedProof">Die akzeptierte Korrekturfahne bearbeiten</message>
 	<message key="grid.action.addCode">Code hinzufügen</message>
 	<message key="grid.action.editCode">Diesen Code bearbeiten</message>
 	<message key="grid.action.deleteCode">Diesen Code löschen</message>
@@ -210,7 +208,7 @@
 	<message key="grid.action.submissionEmail">Zum Lesen der E-Mail bitte klicken</message>
 	<message key="grid.action.approveProofs">Korrekturfahnen anzeigen</message>
 	<message key="grid.action.proofApproved">Das Format wurde geprüft</message>
-	<message key="grid.action.availablePublicationFormat">Format akzeptieren/ablehnen</message>
+	<message key="grid.action.availableRepresentation">Format akzeptieren/ablehnen</message>
 	<message key="grid.action.formatAvailable">Format ist verfügbar und wurde veröffentlicht</message>
 
 	<!-- Review Attachments -->
@@ -266,7 +264,6 @@
 	<message key="catalog.publicationInfo">Informationen zum Buch</message>
 	<message key="catalog.relatedCategories">Verwandte Kategorien</message>
 	<message key="catalog.aboutTheAuthor">Über den/die {$roleName}</message>
-	<message key="catalog.noBioInfo">Zurzeit liegt noch keine Biographie vor.</message>
 	<message key="catalog.loginRequiredForPayment">Bitte beachten Sie: Um einen Band zu kaufen, müssen Sie angemeldet sein. Sobald Sie einen Band ausgewählt haben, den Sie erwerben möchten, gelangen Sie automatisch zur Anmeldeseite. Alle Titel, die mit einem Open-Access-Symbol (geöffnetes Schloss) gekennzeichnet sind, können kostenlos heruntergeladen werden. Eine Anmeldung ist dazu nicht erforderlich.</message>
 
 	<!--
@@ -318,7 +315,7 @@
 	<message key="context.select">Wählen Sie einen Verlag ...</message>
 
 	<!-- User -->
-	<message key="user.noRoles.selectUsersWithoutRoles">Benutzer/innen ohne zugewiesene Rolle mit einbeziehen.</message>
+	<message key="user.noRoles.selectUsersWithoutRoles">Benutzer/innen ohne zugewiesene Funktion mit einbeziehen.</message>
 	<message key="user.noRoles.submitMonograph">Einen Vorschlag einreichen</message>
 	<message key="user.noRoles.submitMonographRegClosed">Einreichen einer Monografie: Die Registrierung als Autor/in ist zurzeit deaktiviert.</message>
 	<message key="user.noRoles.regReviewer">Registrierung als Gutachter/in</message>
@@ -343,19 +340,19 @@
 	<!-- Registration -->
 	<message key="user.register.completeForm">Füllen Sie das Formular aus, um sich beim Verlag zu registrieren</message>
 	<message key="user.register.selectContext">Wählen Sie den Verlag aus, bei dem Sie sich registrieren möchten</message>
-	<message key="user.register.noContexts">Es gibt keinen Verlag, bei dem Sie sich auf dieser Website anmelden können.</message>
+	<message key="user.register.noContexts">Es gibt keine Verlage, bei denen Sie sich auf dieser Website anmelden können.</message>
 	<message key="user.register.privacyStatement">Datenschutzerklärung</message>
 	<message key="user.register.alreadyRegisteredOtherContext"><![CDATA[<a href="{$registerUrl}">Klicken Sie hier</a>, wenn Sie bereits registriert sind.]]></message>
 	<message key="user.register.notAlreadyRegisteredOtherContext"><![CDATA[<a href="{$registerUrl}">Klicken Sie hier</a>, wenn Sie sich noch <strong>nicht</strong> bei diesem oder einem anderen Verlag dieser Website registriert haben.]]></message>
 	<message key="user.register.loginToRegister">Geben Sie Ihren Benutzernamen und Ihr Passwort ein, um sich zu registrieren.</message>
 	<message key="user.register.registrationDisabled">Zurzeit ist keine Registrierung möglich.</message>
-	<message key="user.register.form.passwordLengthTooShort">Das Passwort, das Sie eingegeben haben, ist nicht lang genug.</message>
+	<message key="user.register.form.passwordLengthTooShort">Das Passwort, das Sie eingegeben haben, ist nicht lang genug.not long enough.</message>
 	<message key="user.register.readerDescription">Per E-Mail über das Erscheinen eines Buches benachrichtigt.</message>
 	<message key="user.register.authorDescription">Kann einen Titel beim Verlag einreichen.</message>
 	<message key="user.register.reviewerDescriptionNoInterests">Ich bin bereit, beim Verlag eingegangene Manuskripte zu begutachten.</message>
 	<message key="user.register.reviewerDescription">Erklärt sich bereit, den Peer-Review-Prozess für auf dieser Website eingereichte Manuskripte durchzuführen.</message>
 	<message key="user.register.reviewerInterests">Interessen (inhaltliche Schwerpunkte und Forschungsmethoden):</message>
-	<message key="user.register.form.userGroupRequired">Sie müssen mindestens eine Rolle auswählen</message>
+	<message key="user.register.form.userGroupRequired">Sie müssen mindestens eine Funktion auswählen</message>
 
 	<!-- Site index -->
 	<message key="site.pressView">Verlagswebsite ansehen</message>
@@ -363,8 +360,8 @@
 	<!-- About The Press -->
 	<message key="about.pressContact">Pressekontakt</message>
 	<message key="about.aboutThePress">Über den Verlag</message>
-	<message key="about.editorialTeam">Redaktion</message>
-	<message key="about.editorialPolicies">Die Leitlinien unseres Verlages</message>
+	<message key="about.editorialTeam">Herausgeber/innen</message>
+	<message key="about.editorialPolicies">Richtlinien für Herausgeber/innen</message>
 	<message key="about.focusAndScope">Fokus und Umfang</message>
 	<message key="about.seriesPolicies">Richtlinien für Reihen und Kategorien</message>
 	<message key="about.submissions">Manuskripte einreichen</message>
@@ -375,7 +372,7 @@
 	<message key="about.onlineSubmissions.login">Zum Login</message>
 	<message key="about.onlineSubmissions.needAccount">Benötigen Sie einen Benutzernamen/ein Passwort?</message>
 	<message key="about.onlineSubmissions.registration">Zur Registrierung</message>
-	<message key="about.onlineSubmissions.registrationRequired">Sie müssen registriert und eingeloggt sein, um Manuskripte einreichen oder den aktuellen Stand Ihrer Einreichung überprüfen können.</message>
+	<message key="about.onlineSubmissions.registrationRequired">Sie müssen registriert und eingeloggt sein, um Manuskripte einzureichen oder den aktuellen Status Ihrer Einreichung zu überprüfen.</message>
 	<message key="about.authorGuidelines">Richtlinien für Autoren/innen</message>
 	<message key="about.submissionPreparationChecklist">Checkliste zur Manuskripteinreichung</message>
 	<message key="about.submissionPreparationChecklist.description">Während des Einreichungsvorganges werden die Autor/innen dazu aufgefordert zu überprüfen, ob ihr Manuskript alle genannten Anforderungen erfüllt. Manuskripte, die nicht mit den Richtlinien übereinstimmen, können an die Autor/innen zurückgegeben werden.</message>
@@ -399,7 +396,7 @@
 	<message key="installer.ompUpgrade">OMP-Upgrade</message>
 	<message key="installer.installApplication">Installiere Open Monograph Press</message>
 	<message key="installer.installationInstructions"><![CDATA[
-<p>Danke, dass Sie <strong>Open Monograph Press {$version}</strong> des Public Knowledge Project heruntergeladen haben. Bitte lesen Sie die in der Software enthaltene <a href="{$baseUrl}/docs/README">README</a> -Datei, bevor Sie fortfahren. Mehr Informationen über das das Public Knowledge Project und seine Softwareprojekte finden Sie auf der PKP-Website <a href="http://pkp.sfu.ca/" target="_blank">PKP web site</a>. Wenn Sie einen Bug melden möchten oder technischen Support für Open Monograph Press benötigen, wenden Sie sich bitte an unser: <a href="http://pkp.sfu.ca/support/forum" target="_blank">support forum</a> oder besuchen Sie online PKPs <a href="http://pkp.sfu.ca/bugzilla/" target="_blank">bug reporting system</a>. Wir empfehlen Ihnen zwar, über das Supportforum Kontakt zu uns aufzunehmen, Sie können eine E-Mail an unser Team schreiben: <a href="mailto:pkp.contact@gmail.com">pkp.contact@gmail.com</a>.</p>
+<p>Danke, dass Sie <strong>Open Monograph Press {$version}</strong> des Public Knowledge Project heruntergeladen haben. Bitte lesen Sie die in der Software enthaltene <a href="{$baseUrl}/docs/README">README</a> -Datei, bevor Sie fortfahren. Mehr Informationen über das das Public Knowledge Project und seine Softwareprojekte finden Sie auf der PKP-Website <a href="http://pkp.sfu.ca/" target="_blank">PKP web site</a>. Wenn Sie einen Bug melden möchten oder technischen Support für Open Monograph Press benötigen, wenden Sie sich bitte an unser: <a href="http://forum.pkp.sfu.ca" target="_blank">support forum</a> oder besuchen Sie online PKPs <a href="http://pkp.sfu.ca/bugzilla/" target="_blank">bug reporting system</a>. Wir empfehlen Ihnen zwar, über das Supportforum Kontakt zu uns aufzunehmen, Sie können eine E-Mail an unser Team schreiben: <a href="mailto:pkp.contact@gmail.com">pkp.contact@gmail.com</a>.</p>
 
 <h4>Upgrade</h4>
 
@@ -418,7 +415,7 @@
 <p>2. Es muss ein Verzeichnis angelegt und mit Schreibrechten ausgestattet werden, in dem die hochgeladenen Dateien gespeichert werden können (siehe "Dateieinstellungen" unten).</p>]]></message>
 	<message key="installer.upgradeInstructions"><![CDATA[<h4>OMP Version {$version}</h4>
 
-<p>Vielen Dank, dass Sie <strong>Open Monograph Press</strong> des Public Knowledge Project heruntergeladen haben. Bevor Sie fortfahren, empfehlen wir Ihnen, die <a href="{$baseUrl}/docs/README">README</a> und <a href="{$baseUrl}/docs/UPGRADE">UPGRADE</a> Dateien zu lesen, die in dieser Software enthalten sind. Weitere Informationen über das Public Knowledge Project und seine Softwareprojecte finden Sie auf der <a href="http://pkp.sfu.ca/" target="_blank">PKP-Website</a>. Wenn Sie einen Bug melden möchten oder technischen Support für Open Monograph Press benötigen, wenden Sie sich bitte an unser: <a href="http://pkp.sfu.ca/support/forum" target="_blank">support forum</a> oder besuchen Sie online PKPs <a href="http://pkp.sfu.ca/bugzilla/" target="_blank">bug reporting system</a>. Wir empfehlen Ihnen zwar, über das Supportforum Kontakt zu uns aufzunehmen, Sie können eine E-Mail an unser Team schreiben: <a href="mailto:pkp.contact@gmail.com">pkp.contact@gmail.com</a>.</p>
+<p>Vielen Dank, dass Sie <strong>Open Monograph Press</strong> des Public Knowledge Project heruntergeladen haben. Bevor Sie fortfahren, empfehlen wir Ihnen, die <a href="{$baseUrl}/docs/README">README</a> und <a href="{$baseUrl}/docs/UPGRADE">UPGRADE</a> Dateien zu lesen, die in dieser Software enthalten sind. Weitere Informationen über das Public Knowledge Project und seine Softwareprojecte finden Sie auf der <a href="http://pkp.sfu.ca/" target="_blank">PKP-Website</a>. Wenn Sie einen Bug melden möchten oder technischen Support für Open Monograph Press benötigen, wenden Sie sich bitte an unser: <a href="http://forum.pkp.sfu.ca" target="_blank">support forum</a> oder besuchen Sie online PKPs <a href="http://pkp.sfu.ca/bugzilla/" target="_blank">bug reporting system</a>. Wir empfehlen Ihnen zwar, über das Supportforum Kontakt zu uns aufzunehmen, Sie können eine E-Mail an unser Team schreiben: <a href="mailto:pkp.contact@gmail.com">pkp.contact@gmail.com</a>.</p>
 <p>Es wird <strong>dringend empfohlen</strong> Datenbank, Dateienverzeichnis und OMP-Installationsverzeichnis zu speichern, bevor Sie fortfahren.</p>
 <p>Wenn Sie den Upgrade im abgesicherten Modus <a href="http://www.php.net/features.safe-mode" target="_blank">PHP Safe Mode</a> durchführen, setzen Sie bitte bei max_execution_time in Ihrer php.ini-Konfigurationsdatei einen hohen Wert fest. Wenn dieses oder ein anderes Zeitlimit (z.B. Apache's "Timeout") erreicht und der Upgrade-Vorgang unterbrochen wurde, kann der Vorgang nur durch manuelles Eingreifen fortgesetzt werden.</p>]]></message>
 	<message key="installer.localeSettingsInstructions"><![CDATA[Für einen vollständigen Unicode (UTF-8)-Support wählen Sie bitte UTF-8 für alle Zeichensatz-Einstellungen. Bitte beachten Sie, dass der Support zurzeit einen MySQL >= 4.1.1 or PostgreSQL >= 9.1.5 Datenbankserver zur Voraussetzung hat. Außerdem wird für den vollen Unicode-Support die <a href="http://www.php.net/mbstring" target="_blank">mbstring</a>-Bibliothek (in jüngeren PHP-Installationen meist standardmäßig aktiviert). Sollten Sie erweiterte Zeichensätze verwenden, kann es zu Schwierigkeiten kommen, wenn Ihr Server diese Anforderungen nicht erfüllt.
@@ -426,7 +423,7 @@
 Ihr Server untersützt aktuell mbstring: <strong>{$supportsMBString}</strong>]]></message>
 	<message key="installer.allowFileUploads"><![CDATA[Ihr Server erlaubt aktuell die Datei-Uploads: <strong>{$allowFileUploads}</strong>]]></message>
 	<message key="installer.maxFileUploadSize"><![CDATA[Ihr Server erlaubt aktuell das Hochladen von Dateien bis zu einer maximalen Dateigröße von: <strong>{$maxFileUploadSize}</strong>]]></message>
-	<message key="installer.localeInstructions">Die Sprache, die die Hauptsprache Ihres Systems sein soll. Bitte konsultieren Sie die OMP-Dokumentation, wenn Sie an der Unterstützung einer Sprache interessiert sind, die hier nicht aufgeführt ist.</message>
+	<message key="installer.localeInstructions">Die Sprache, die Hauptsprache in Ihrem System sein soll. Bitte konsultieren Sie die OMP-Dokumentation, wenn Sie an der Unterstützung einer Sprache interessiert sind, die hier nicht aufgeführt ist.</message>
 	<message key="installer.additionalLocalesInstructions">Wählen Sie weitere Sprachen aus, die in diesem System unterstützt werden sollen. Verlage, die auf dieser Website gehostet sind, können diese Sprachen verwenden. Weitere Sprachen können ebenfalls jederzeit installiert werden, und zwar über das Website-Administration-Interface. Mit * markierte Regionaleinstellungen sind unter Umständen unvollständig.</message>
 	<message key="installer.filesDirInstructions"><![CDATA[Geben Sie den vollständigen Pfadnamen zu einem bestehenden Verzeichnis an, in dem die hochgeladenen Dateien abgelegt werden sollen. Auf dieses Verzeichnis sollte kein direkter Zugriff von außen (vom Web aus) möglich sein. <strong>Bitte stellen Sie sicher, dass das Verzeichnis bereits existiert und es beschreibbar ist, bevor Sie mit der Installation beginnen.</strong> Für Windows-Pfadnamen sind Schrägstriche zu verwenden, z.B. "C:/mypress/files".]]></message>
 	<message key="installer.databaseSettingsInstructions">Um die Daten ablegen zu können, benötigt OMP einen Zugriff auf eine SQL-Datenbank. Bitte beachten Sie die oben genannten Systemanforderungen für die aufgeführten unterstützten Datenbanken. In den darunter stehenden Feldern werden die Einstellungen angegeben, die zur Verbindung mit der Datenbank gesetzt werden müssen.</message>
@@ -435,10 +432,10 @@ Ihr Server untersützt aktuell mbstring: <strong>{$supportsMBString}</strong>]]>
 <p>Der Installer konnte die Konfigurationsdatei nicht automatisch überschreiben. Bevor Sie versuchen, das System zu verwenden, öffnen Sie bitte <tt>config.inc.php</tt> in einem geeigneten Texteditor und ersetzen Sie dessen Inhalte durch die Inhalte der unten stehenden Textbox.</p>]]></message>
 	<message key="installer.installationComplete"><![CDATA[<p>Die OMP-Installation wurde erfolgreich abgeschlossen.</p>
 <p>Um das System zu verwenden, loggen Sie sich auf der <a href="{$loginUrl}">Login</a>-Seite mit Ihrem Benutzernamen und Ihrem Passwort ein.</p>
-<p>Wenn Sie Nachrichten und Updates erhalten möchten, <strong>melden Sie sich bitte bei <a href="http://pkp.sfu.ca/omp/register" target="_blank">http://pkp.sfu.ca/omp/register</a> an.</strong> Wenn Sie irgendwelche Fragen stellen oder Kommentare abgeben möchten, besuchen Sie bitte das <a href="http://pkp.sfu.ca/support/forum" target="_blank">Supportforum</a>.</p>]]></message>
+<p>Wenn Sie Nachrichten und Updates erhalten möchten, <strong>melden Sie sich bitte bei <a href="http://pkp.sfu.ca/omp/register" target="_blank">http://pkp.sfu.ca/omp/register</a> an.</strong> Wenn Sie irgendwelche Fragen stellen oder Kommentare abgeben möchten, besuchen Sie bitte das <a href="http://forum.pkp.sfu.ca" target="_blank">Supportforum</a>.</p>]]></message>
 	<message key="installer.upgradeComplete"><![CDATA[<p>Der Upgrade von OMP auf Version {$version} wurde erfolgreich abgeschlossen.</p>
 <p>Vergessen Sie nicht, die "installiert"-Einstellung in Ihrer config.inc.php Konfigurationsdatei auf <em>Ein</em> zurückzusetzen.</p>
-<p>Wenn Sie bisher noch nicht registriert sind und Neuigkeiten und Updates empfangen möchten, <strong>registireren Sie sich bitte unter <a href="http://pkp.sfu.ca/omp/register" target="_blank">http://pkp.sfu.ca/omp/register</a>.</strong> Falls Sie Fragen oder Anmerkungen haben, besuchen Sie bitte das <a href="http://pkp.sfu.ca/support/forum" target="_blank">Supportforum</a>.</p>]]></message>
+<p>Wenn Sie bisher noch nicht registriert sind und Neuigkeiten und Updates empfangen möchten, <strong>registireren Sie sich bitte unter <a href="http://pkp.sfu.ca/omp/register" target="_blank">http://pkp.sfu.ca/omp/register</a>.</strong> Falls Sie Fragen oder Anmerkungen haben, besuchen Sie bitte das <a href="http://forum.pkp.sfu.ca" target="_blank">Supportforum</a>.</p>]]></message>
 	<!-- Monograph Logs -->
 	<message key="log.review.reviewCleared">Die Gutachtenrunde {$round} von Gutachter/in {$reviewerName} für Manuskript {$submissionId} wurde abgeschlossen.</message>
 	<message key="log.review.reviewDueDateSet">Das Abgabedatum für Begutachtungsrunde {$round} von Manuskript {$submissionId} durch {$reviewerName} wurde auf den {$dueDate} festgesetzt.</message>
@@ -502,8 +499,8 @@ Ihr Server untersützt aktuell mbstring: <strong>{$supportsMBString}</strong>]]>
 	<message key="notification.type.approveSubmissionTitle">Warten auf Freigabe.</message>
 	<message key="notification.type.formatNeedsApprovedSubmission">Damit das Format in den Katalog aufgenommen werden kann, müssen Sie die Metadaten für den Katalogeintrag akzeptieren. Aktivieren Sie dazu auf diesem Reiter die Checkbox "Übernehme die Metadaten für dieses Format in den Katalog". Wechseln Sie anschließend auf den Reiter 'Monografie' und aktvieren dort die Checkbox 'Erstelle anhand der angegebenen Metadaten einen neuen Katalogeintrag'.</message>
 	<message key="notification.type.configurePaymentMethod.title">Es wurde noch keine Zahlungsweise konfiguriert.</message>
-	<message key="notification.type.configurePaymentMethod">Um die E-Commerce-Einstellungen definieren zu können, müssen Sie zunächst eine Zahlungsweise konfigurieren.</message>
-	<message key="notification.type.visitCatalog">Die eingereichte Monografie wurde akzeptiert. Bitte gehen Sie zum Katalog, um dort genauere Angaben zum Buch zu machen. Der Link zum Katalog befindet sich oberhalb dieses Dialogfeldes.</message>
+	<message key="notification.type.configurePaymentMethod">Bevor Sie die E-Commerce-Einstellungen definieren können, müssen Sie zunächst eine Zahlungsweise konfigurieren.</message>
+	<message key="notification.type.visitCatalog">Die eingereichte Monografie wurde akzeptiert. Bitte gehen Sie zum Katalog, um dort genauere Angaben zum Buch zu machen. Den Link zum Katalog befindet sich oberhalb dieses Dialogfeldes.</message>
 	<message key="notification.type.visitCatalogTitle">Katalogverwaltung</message>
 
 	<!-- Authorization -->
@@ -514,8 +511,8 @@ Ihr Server untersützt aktuell mbstring: <strong>{$supportsMBString}</strong>]]>
 	<message key="user.authorization.invalidMonograph">Ungültiges Buch oder kein Buch angefordert!</message>
 	<message key="user.authorization.noContext">Kein Verlag im Kontext!</message>
 	<message key="user.authorization.seriesAssignment">Sie versuchen, auf eine Monografie zuzugreifen, die nicht mehr zu Ihrer Reihe gehört.</message>
-	<message key="user.authorization.workflowStageAssignmentMissing">Zugriff verweigert! Sie sind nicht für diese Phase des Publikationsprozesses freigeschaltet.</message>
-	<message key="user.authorization.workflowStageSettingMissing">Zugriff verweigert! Die Benutzergruppe, in der Sie aktuell aktiv sind, ist nicht mit dieser Phase des Publikationsprozesses befasst. Bitte überprüfen Sie Ihre Einstellungen.</message>
+	<message key="user.authorization.workflowStageAssignmentMissing">Zugriff verweigert! Sie sind nicht für dieses Stadium des Publikationsprozesses freigeschaltet.</message>
+	<message key="user.authorization.workflowStageSettingMissing">Zugriff verweigert! Die Benutzer/innengruppe, in der Sie aktuell aktiv sind, ist nicht mit dieser Phase des Publikationsprozesses befasst. Bitte überprüfen Sie Ihre Einstellungen.</message>
 
 	<message key="payment.directSales">Download von der Verlagswebseite</message>
 	<message key="payment.directSales.price">Preis</message>

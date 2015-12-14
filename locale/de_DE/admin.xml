@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE locale SYSTEM "../../lib/pkp/dtd/locale.dtd">
 
 <!--
@@ -14,7 +14,7 @@
 <locale name="de_DE" full_name = "Deutsch (Deutschland)">
 	<message key="admin.hostedPresses">Gehostete Verlage</message>
 	<message key="admin.settings.pressRedirect">Weiterleitung an den Verlag</message>
-	<message key="admin.settings.pressRedirectInstructions">Auf der Startseite eingehende Fragen werden an diesen Verlag weitergeleitet. Dies kann beispielsweise eine praktische Lösung sein, wenn die Website nur einen einzigen Verlag hostet.</message>
+	<message key="admin.settings.pressRedirectInstructions">Auf der Startseite eingehende Fragen werden an diesen Verlag weitergeleitet. Dieses Verfahren eignet sich vor allem dann, wenn die Website nur einen einzigen Verlag hostet.</message>
 	<message key="admin.settings.noPressRedirect">Nicht umleiten</message>
 
 	<message key="admin.languages.primaryLocaleInstructions">Dies wird die voreingestellte Sprache für diese Website und alle gehosteten Verlage sein.</message>
@@ -44,7 +44,7 @@
 	<message key="admin.presses.urlWillBe">Die URL des Verlages wird lauten {$sampleUrl}</message>
 	<message key="admin.contexts.form.titleRequired">Die Angabe des Titels ist erforderlich.</message>
 	<message key="admin.contexts.form.pathRequired">Die Angabe des Pfades ist erforderlich.</message>
-	<message key="admin.contexts.form.pathAlphaNumeric">Der Pfad darf nur Buchstaben und Zahlen, Unterstriche und Bindestriche enthalten und muss mit einem Buchstaben oder einer Zahl beginnen und enden.</message>
+	<message key="admin.contexts.form.pathAlphaNumeric">Der Pfad darf nur Buchstaben und Zahlen, Unterstriche und Bindestriche enthalten. Er muss mit einem Buchstaben oder einer Zahl beginnen und enden.</message>
 	<message key="admin.contexts.form.pathExists">Der ausgewählte Pfad wird bereits von einem anderen Verlag verwendet.</message>
 	<message key="admin.presses.enablePressInstructions">Die Anzeige dieses Verlages auf der Website freischalten.</message>
 	<message key="admin.presses.pressDescription">Verlagsbeschreibung</message>
